@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Roboto&display=swap');
+
 /* GENERAL */
 
 html,
@@ -11,17 +13,23 @@ body {
 body {
 	background-color: #ffe45e;
 	color: #2b2d42;
-	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-family: 'Roboto', Verdana, sans-serif;
 }
 
 h1,
-h2 {
+h2,
+h3 {
 	margin: 0;
 	line-height: 1.2;
+	font-family: 'Raleway', Verdana, sans-serif;
+}
+
+h2 {
+	font-size: 18px;
 }
 
 p {
-	margin: 1rem 0 0;
+	margin: 0.7rem 0 0;
 }
 
 button {
@@ -41,9 +49,15 @@ button {
 	max-width: 800px;
 	min-width: 300px;
 	margin: auto;
-	padding: 1.8rem;
+	padding: 2rem;
 	box-sizing: border-box;
 	border-bottom: 2px dashed #ffe45e;
+}
+
+.section__title {
+	text-transform: uppercase;
+	letter-spacing: 0.25rem;
+	margin: 1.2rem 0;
 }
 
 .section:last-of-type {
@@ -54,6 +68,11 @@ button {
 .form__label {
 	font-weight: 700;
 	margin-right: 5px;
+}
+
+.section__icon {
+	color: #ffe45e;
+	align-self: flex-end;
 }
 
 /* FORM */
@@ -79,12 +98,13 @@ fieldset:first-of-type {
 
 input {
 	border: none;
-	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-family: 'Roboto', Verdana, sans-serif;
 	font-size: 16px;
 	color: #2b2d42;
 	padding: 0;
 	border-bottom: 1px solid #ffe45e;
 	flex-grow: 1;
+	box-sizing: border-box;
 }
 
 input:focus {
@@ -97,7 +117,7 @@ input:focus {
 	font-weight: 700;
 	width: 100%;
 	height: 38px;
-	box-sizing: border-box;
+	font-family: 'Raleway', Verdana, sans-serif;
 }
 
 /* CONTROLS */

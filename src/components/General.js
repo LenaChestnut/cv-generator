@@ -21,34 +21,31 @@ class General extends React.Component {
     render() {
         const { email, phone, fullName } = this.state;
 
-        const iconStyles = {
-            color: '#ffe45e',
-            alignSelf: 'flex-end',
-        }
-
         return (
             <div className="section general">
-                {/* <h1 className="general__name">Елена Каштанова</h1>
-                <p className="general__email">
-                    <span className="section__label">Email:</span> lenachestnut@gmail.com
-                </p>
-                <p className="general__phone">
-                    <span className="section__label">Phone:</span> +7927555555
-                </p>
-                <div className="section__buttons">
-                    <Edit style={iconStyles}/>
+                {/* <div className="section__info">
+                    <h1 className="general__name">Елена Каштанова</h1>
+                    <h2 className="section__title">Contact info</h2>
+                    <p className="general__email">
+                        <span className="section__label">Email:</span> lenachestnut@gmail.com
+                    </p>
+                    <p className="general__phone">
+                        <span className="section__label">Phone:</span> +7927555555
+                    </p>
+                    <div className="section__buttons">
+                        <Edit className="section__icon"/>
+                    </div>
                 </div> */}
-                <form className="form">
-                    <fieldset>
-                        <input
-                            type="text"
-                            className="form__name-input"
-                            name="fullName"
-                            placeholder="John Doe"
-                            value={fullName}
-                            onChange={this.handleChange}
-                        ></input>
-                    </fieldset>
+                <form className="section__form">
+                    <input
+                        type="text"
+                        className="form__name-input"
+                        name="fullName"
+                        placeholder="John Doe"
+                        value={fullName}
+                        onChange={this.handleChange}
+                    ></input>
+                    <h2 className="section__title">Contact info</h2>
                     <fieldset>
                         <label className="form__label" htmlFor="email">Email: </label>
                         <input 
@@ -72,8 +69,8 @@ class General extends React.Component {
                         ></input>
                     </fieldset>
                     <fieldset className="form__buttons">
-                        <button type="submit"><CheckSquare style={iconStyles}/></button>
-                        <button type="button"><XSquare style={iconStyles}/></button>
+                        <button type="submit"><CheckSquare className="section__icon"/></button>
+                        <button type="button"><XSquare className="section__icon"/></button>
                     </fieldset>
                 </form>
             </div>

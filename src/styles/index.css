@@ -57,7 +57,7 @@ button {
 .section__title {
 	text-transform: uppercase;
 	letter-spacing: 0.25rem;
-	margin: 1.2rem 0;
+	margin-bottom: 1.2rem;
 }
 
 .section:last-of-type {
@@ -73,6 +73,12 @@ button {
 .section__icon {
 	color: #ffe45e;
 	align-self: flex-end;
+}
+
+/* GENERAL */
+
+.general__name {
+	margin-bottom: 1.2rem;
 }
 
 /* FORM */

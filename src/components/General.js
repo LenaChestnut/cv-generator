@@ -23,7 +23,7 @@ class General extends React.Component {
 
         return (
             <div className="section general">
-                <div className="section__info">
+                {/* <div className="section__info">
                     <h1 className="general__name">Елена Каштанова</h1>
                     <h2 className="section__title">Contact info</h2>
                     <p className="general__email">
@@ -33,10 +33,10 @@ class General extends React.Component {
                         <span className="section__label">Phone:</span> +7927555555
                     </p>
                     <div className="section__buttons">
-                        <Edit className="section__icon"/>
+                        <button type="button"><Edit className="section__icon"/></button>
                     </div>
-                </div>
-                {/* <form className="section__form">
+                </div> */}
+                <form className="section__form">
                     <input
                         type="text"
                         className="form__name-input"
@@ -72,7 +72,7 @@ class General extends React.Component {
                         <button type="submit"><CheckSquare className="section__icon"/></button>
                         <button type="button"><XSquare className="section__icon"/></button>
                     </fieldset>
-                </form> */}
+                </form>
             </div>
         )
     }

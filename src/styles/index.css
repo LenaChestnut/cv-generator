@@ -29,11 +29,14 @@ h2 {
 
 p {
 	margin: 0.7rem 0 0;
+	font-size: 16px;
 }
 
 button {
 	background: none;
 	border: none;
+	padding: 0;
+	margin-left: 5px;
 }
 
 .app {
@@ -70,7 +73,7 @@ button {
 }
 
 .section__icon {
-	color: #ffe45e;
+	color: #218380;
 	align-self: flex-end;
 }
 
@@ -78,6 +81,26 @@ button {
 
 .general__name {
 	margin-bottom: 1.2rem;
+}
+
+/* EDUCATION */
+
+.section__school-info,
+.form__item:not(:first-of-type) {
+	margin-top: 1rem;
+}
+
+.section__school-info {
+	padding-bottom: 1rem;
+	position: relative;
+}
+
+.section__school-info:before {
+	content: '';
+	border-bottom: 2px dashed #218380;
+	position: absolute;
+	width: 100%;
+	bottom: 0;
 }
 
 /* FORM */
@@ -95,22 +118,31 @@ fieldset {
 	flex-grow: 1;
 }
 
-fieldset:first-of-type {
+.general fieldset:first-of-type {
 	margin: 0;
 }
 
+.education__form {
+	border-bottom: 2px dashed #218380;
+	padding-bottom: 1rem;
+	margin-bottom: 1rem;
+}
 /* Form inputs */
 
 input {
 	font-family: 'Roboto', Verdana, sans-serif;
 	font-size: 16px;
-	height: 19px;
-	padding: 0;
+	padding-bottom: 0.2rem;
 	color: #2b2d42;
 	border: none;
-	border-bottom: 1px solid #ffe45e;
+	border-bottom: 1px dashed #898980;
 	flex-grow: 1;
-	box-sizing: border-box;
+	margin-top: 0.7rem;
+}
+
+fieldset input,
+input:first-of-type {
+	margin-top: 0;
 }
 
 input:focus {
@@ -131,6 +163,13 @@ input:focus {
 	font-size: 18px;
 	font-weight: 700;
 	font-family: 'Raleway', Verdana, sans-serif;
+	height: 22px;
+}
+
+.form__date-input {
+	width: 80px;
+	flex-grow: 0;
+	margin-right: 1rem;
 }
 
 /* CONTROLS */
@@ -140,4 +179,10 @@ input:focus {
 	display: flex;
 	justify-content: flex-end;
 	margin-top: 1rem;
+}
+
+.education__buttons {
+	position: absolute;
+	right: 0;
+	bottom: 1rem;
 }

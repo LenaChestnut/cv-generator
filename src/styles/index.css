@@ -1,31 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Roboto&display=swap');
-
 /* GENERAL */
-
-html,
-body {
-	margin: 0;
-	padding: 0;
-	min-width: 320px;
-	word-wrap: break-word;
-}
-
-body {
-	background-color: #ffe45e;
-	color: #2b2d42;
-	font-family: 'Roboto', Verdana, sans-serif;
-}
-
-h1,
-h2,
-h3 {
-	margin: 0;
-	font-family: 'Raleway', Verdana, sans-serif;
-}
-
-h2 {
-	font-size: 18px;
-}
 
 p {
 	margin: 0.7rem 0 0;
@@ -39,32 +12,7 @@ button {
 	margin-left: 5px;
 }
 
-.app {
-	padding: 2rem 0;
-}
-
 /* SECTION */
-
-.section {
-	background-color: #fdfdfd;
-	width: 90%;
-	max-width: 800px;
-	min-width: 300px;
-	margin: auto;
-	padding: 2rem;
-	box-sizing: border-box;
-	border-bottom: 2px dashed #ffe45e;
-}
-
-.section__title {
-	text-transform: uppercase;
-	letter-spacing: 0.25rem;
-	margin-bottom: 1.2rem;
-}
-
-.section:last-of-type {
-	border-bottom: none;
-}
 
 .section__label,
 .form__label {
@@ -85,22 +33,17 @@ button {
 
 /* EDUCATION */
 
-.section__school-info,
+.education,
 .form__item:not(:first-of-type) {
 	margin-top: 1rem;
 }
 
-.section__school-info {
+.education,
+.experience {
 	padding-bottom: 1rem;
+	margin-bottom: 1.5rem;
+	border-bottom: 1px solid #218380;
 	position: relative;
-}
-
-.section__school-info:before {
-	content: '';
-	border-bottom: 2px dashed #218380;
-	position: absolute;
-	width: 100%;
-	bottom: 0;
 }
 
 /* FORM */
@@ -122,11 +65,6 @@ fieldset {
 	margin: 0;
 }
 
-.education__form {
-	border-bottom: 2px dashed #218380;
-	padding-bottom: 1rem;
-	margin-bottom: 1rem;
-}
 /* Form inputs */
 
 input {
@@ -167,7 +105,7 @@ input:focus {
 }
 
 .form__date-input {
-	width: 80px;
+	width: 40px;
 	flex-grow: 0;
 	margin-right: 1rem;
 }

@@ -1,6 +1,6 @@
 import React from 'react';
-import { PlusSquare } from 'react-feather';
 import School from './School';
+import AddButton from './../shared/AddButton';
 import { v4 as uuidv4 } from 'uuid';
 
 class Education extends React.Component {
@@ -39,17 +39,15 @@ class Education extends React.Component {
 
     render() {
         return (
-            <div  className="section education">
+            <section  className="section">
                 <h2 className="section__title">Education</h2>
                 <div className="section__info">
                     {this.state.schools.map(school => {
                         return <School school={school} key={school.id}/>;
                     })}
                 </div>
-                <div className="section__buttons">
-                    <button type="button"><PlusSquare className="section__icon"/></button>
-                </div>
-            </div>
+                <AddButton />
+            </section>
         )
     }
 }

@@ -1,0 +1,177 @@
+/* FONTS */
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Roboto&display=swap');
+
+/* ROOT */
+
+:root {
+	--accent-color: #4d6a6d;
+	--text-color: #2b2d42;
+	--inactive-color: #808f85;
+	--heading-font: 'Raleway', Verdana, sans-serif;
+	--paragraph-font: 'Roboto', Verdana, sans-serif;
+}
+
+/* RESET */
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: var(--accent-color);
+	color: var(--text-color);
+	font-family: var(--paragraph-font);
+	padding: 2rem 0;
+	box-sizing: border-box;
+	overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3 {
+	margin: 0;
+	font-family: var(--heading-font);
+}
+
+h2 {
+	font-size: 18px;
+}
+
+p {
+	margin: 0;
+}
+
+input {
+	font-family: var(--paragraph-font);
+	font-size: 16px;
+	border: none;
+	color: var(--text-color);
+	padding: 0;
+	border-bottom: 1px dotted var(--accent-color);
+}
+
+@media screen and (min-width: 500px) {
+	input {
+		max-width: 50%;
+	}
+}
+
+button {
+	background: none;
+	border: none;
+	padding: 0;
+	margin-left: 0.3rem;
+}
+
+fieldset {
+	border: none;
+	padding: 0;
+	margin: 0.3rem 0 0;
+}
+
+h2 + fieldset {
+	margin-top: 1rem;
+}
+
+/* APP */
+
+.app {
+	width: 90%;
+	max-width: 800px;
+	min-width: 300px;
+	margin: auto;
+}
+
+/* SECTION */
+
+.section {
+	padding: 2rem;
+	background-color: #fdfdfd;
+	border-radius: 5px;
+	margin-top: 1rem;
+}
+
+.section:first-child {
+	margin-top: 0;
+}
+
+.section__title {
+	text-transform: uppercase;
+	letter-spacing: 0.25rem;
+	margin-top: 1.2rem;
+}
+
+.section__title:first-child {
+	margin-top: 0;
+}
+
+.info-item {
+	margin-top: 1rem;
+	border-bottom: 1px dotted var(--accent-color);
+	padding-bottom: 0.7rem;
+}
+
+.info-item:last-child {
+	margin-bottom: 0.7rem;
+}
+
+.info-item-general {
+	border-bottom: none;
+	padding-bottom: 0;
+}
+
+.info-item__extra,
+.form > input {
+	margin-top: 0.3rem;
+}
+
+.label,
+.form__label {
+	font-weight: 700;
+}
+
+.name,
+.form__name-input {
+	font-size: 2rem;
+}
+
+.info-item__main,
+.form__degree-input,
+.form__job-input {
+	font-size: 1.1rem;
+}
+
+/* FORMS */
+
+.form {
+	display: flex;
+	flex-direction: column;
+}
+
+.form > input:first-child {
+	font-family: var(--heading-font);
+	font-weight: 700;
+}
+
+.form__date-input {
+	width: 80px;
+}
+
+.form__date-input + p {
+	display: inline;
+}
+
+/* BUTTONS */
+
+.button-container {
+	margin-top: 0.3rem;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.button__icon {
+	color: var(--inactive-color);
+}

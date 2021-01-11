@@ -1,15 +1,15 @@
 import React from 'react';
-import Education from './components/Education';
-// import Experience from './components/Experience';
-import General from './components/General';
+import Education from './components/Education/Education';
+import Experience from './components/Experience/Experience';
+import General from './components/General/General';
 
 function App() {
   return (
-    <div className="app">
+    <main className="app">
       <General />
       <Education />
-      {/* <Experience /> */}
-    </div>
+      <Experience />
+    </main>
   );
 }
 

@@ -1,8 +1,10 @@
+import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/hogwarts/i);
-  expect(linkElement).toBeInTheDocument();
+describe("App container", () => {
+  test("App component is rendered correctly", () => {
+    render(<App />);
+    expect(screen.getByRole('main')).toBeInTheDocument();
+  });
 });

@@ -1,6 +1,6 @@
 import React from "react";
 import EditButton from './../shared/EditButton';
-import EducationForm from './EducationForm';
+// import EducationForm from './EducationForm';
 
 class School extends React.Component {
     render() {
@@ -14,7 +14,7 @@ class School extends React.Component {
                     <p className="info-item__extra dates">{startDate} - {endDate}</p>
                     <EditButton />
                 </div>
-                <EducationForm school={this.props.school} />
+                {/* <EducationForm school={this.props.school} /> */}
             </div>
         )
     }

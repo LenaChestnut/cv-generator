@@ -1,6 +1,6 @@
 import React from 'react';
 import EditButton from './../shared/EditButton';
-import ExperienceForm from './ExperienceForm';
+// import ExperienceForm from './ExperienceForm';
 
 class Workplace extends React.Component {
     render () {
@@ -12,7 +12,7 @@ class Workplace extends React.Component {
                     <p className="info-item__extra dates">2017 - 2019</p>
                     <EditButton />
                 </div>
-                <ExperienceForm />
+                {/* <ExperienceForm /> */}
             </div>
         )
     };

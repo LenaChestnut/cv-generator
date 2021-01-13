@@ -1,23 +1,23 @@
 import React from 'react';
 import EditButton from './../shared/EditButton';
-import GeneralForm from './GeneralForm';
+// import GeneralForm from './GeneralForm';
 
 class General extends React.Component {
-    constructor() {
-        super();
+    // constructor() {
+    //     super();
 
-        this.state = {
-            email: '',
-            phone: '',
-            fullName: ''
-        }
+    //     this.state = {
+    //         email: '',
+    //         phone: '',
+    //         fullName: ''
+    //     }
 
-        this.handleChange = this.handleChange.bind(this);
-    }
+    //     this.handleChange = this.handleChange.bind(this);
+    // }
 
-    handleChange(e) {
-        this.setState({[e.target.name]: e.target.value});
-    }
+    // handleChange(e) {
+    //     this.setState({[e.target.name]: e.target.value});
+    // }
 
     render() {
         return (
@@ -35,7 +35,7 @@ class General extends React.Component {
                     </div>
                 </div>
                 <EditButton />
-                <GeneralForm />
+                {/* <GeneralForm /> */}
             </section>
         )
     }

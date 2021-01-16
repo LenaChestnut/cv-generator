@@ -64,6 +64,7 @@ button {
 	border: none;
 	padding: 0;
 	margin-left: 0.3rem;
+	cursor: pointer;
 }
 
 fieldset {

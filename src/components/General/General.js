@@ -1,37 +1,47 @@
 import React from 'react';
 import EditButton from './../shared/EditButton';
-// import GeneralForm from './GeneralForm';
+import GeneralForm from './GeneralForm';
 
 class General extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {
-            fullName: '',
-            email: '',
-            phone: ''
+            isFormOpen: false,
         }
+
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick() {
+        this.setState(state => ({
+            isFormOpen: !state.isFormOpen,
+        }));
     }
 
     render() {
-        const { fullName, email, phone } = this.state;
+        const { isFormOpen } = this.state;
+        const { fullName, email, phone } = this.props;
 
         return (
-            <section className="section">
-                <div className="section__info">
-                    <h1 className="name">{fullName ? fullName : "Your Name"}</h1>
-                    <h2 className="section__title">Contact info</h2>
-                    <div className="info-item info-item-general">
-                        <p className="info-item__extra email">
-                            <span className="label">Email:</span> {email ? email : "YourEmail@gmail.com"}
+            <section className='section'>
+                {isFormOpen
+                ? <GeneralForm />
+                :                
+                <div className='section__info'>
+                    <h1 className='name'>{fullName ? fullName : 'Your name'}</h1>
+                    <h2 className='section__title'>Contact info</h2>
+                    <div className='info-item info-item-general'>
+                        <p className='info-item__extra email'>
+                            <span className='label'>Email:</span> {email ? email : 'your_email@gmail.com'}
                         </p>
-                        <p className="info-item__extra phone">
-                            <span className="label">Phone:</span> {phone ? phone : "5-555-555"}
+                        <p className='info-item__extra phone'>
+                            <span className='label'>Phone:</span> {phone ? phone : 'XXX-XXX-XXX'}
                         </p>
                     </div>
-                    <EditButton />
+                    <EditButton handleClick={this.handleClick}/>
                 </div>
-                {/* <GeneralForm /> */}
+                }
             </section>
         );
     }

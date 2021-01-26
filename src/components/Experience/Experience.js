@@ -4,13 +4,15 @@ import AddButton from './../shared/AddButton';
 
 class Experience extends React.Component {
     render() {
+        const { workplaces } = this.props.experience;
+
         return (
             <section className="section">
                 <h2 className="section__title">Experience</h2>
                 <div className="section__info">
-                    <Workplace />
-                    <Workplace />
-                    <Workplace />
+                    {workplaces.map(workplace => {
+                        return <Workplace workplace={workplace} key={workplace.id}/>;
+                    })}
                 </div>
                 <AddButton />
             </section>

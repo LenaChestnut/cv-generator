@@ -51,6 +51,7 @@ input {
 	color: var(--text-color);
 	padding: 0;
 	border-bottom: 1px dotted var(--accent-color);
+	box-sizing: border-box;
 }
 
 @media screen and (min-width: 500px) {
@@ -155,6 +156,7 @@ h2 + fieldset {
 .form > input:first-child {
 	font-family: var(--heading-font);
 	font-weight: 700;
+	margin-top: 0;
 }
 
 .form__date-input {

@@ -9,9 +9,9 @@ class School extends React.Component {
         return (
             <div className="info-item">
                 <div>
-                    <h3 className="info-item__main degree">{degree}</h3>
-                    <p className="info-item__extra school-name">{schoolName}</p>
-                    <p className="info-item__extra dates">{startDate} - {endDate}</p>
+                    <h3 className="info-item__main degree">{degree ? degree : 'Degree Title'}</h3>
+                    <p className="info-item__extra school-name">{schoolName ? schoolName : 'School Name'}</p>
+                    <p className="info-item__extra dates">{startDate ? startDate : 'XXXX'} - {endDate ? endDate : 'XXXX'}</p>
                     <EditButton />
                 </div>
                 {/* <EducationForm school={this.props.school} /> */}

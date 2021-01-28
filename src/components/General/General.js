@@ -26,10 +26,10 @@ class General extends React.Component {
         return (
             <section className='section'>
                 {isFormOpen
-                ? <GeneralForm />
+                ? <GeneralForm handleClick={this.handleClick} />
                 :                
                 <div className='section__info'>
-                    <h1 className='name'>{fullName ? fullName : 'Your name'}</h1>
+                    <h1 className='info-item__main name'>{fullName ? fullName : 'Your Name'}</h1>
                     <h2 className='section__title'>Contact info</h2>
                     <div className='info-item info-item-general'>
                         <p className='info-item__extra email'>

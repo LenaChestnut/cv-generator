@@ -27,3 +27,12 @@ Resources:
 
 https://www.sarasoueidan.com/blog/accessible-icon-buttons/
 https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html
+
+OR
+
+Add 'aria-label' attribute to the button for accesibility and 'title' for tooltip messages. Buttons like that can be tested with:
+
+```javascript
+// Name should correspond to the aria-label of the button
+expect(screen.getByRole('button', { name: /name/i })).toBeInTheDocument();
+```

@@ -2,8 +2,8 @@ import React from 'react';
 import FormButtons from './../shared/FormButtons';
 
 class GeneralForm extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {
             email: '',
@@ -22,39 +22,40 @@ class GeneralForm extends React.Component {
         const { email, phone, fullName } = this.state;
 
         return (
-            <form className="form">
+            <form className='form' name='general-form'>
                 <input
-                    type="text"
-                    className="form__name-input"
-                    name="fullName"
-                    placeholder="John Doe"
+                    type='text'
+                    className='form__name-input'
+                    name='fullName'
+                    aria-label='fullName'
+                    placeholder='John Doe'
                     value={fullName}
                     onChange={this.handleChange}
                 ></input>
-                <h2 className="section__title">Contact info</h2>
+                <h2 className='section__title'>Contact info</h2>
                 <fieldset>
-                    <label className="form__label" htmlFor="email">Email: </label>
+                    <label className='form__label' htmlFor='email'>Email: </label>
                     <input 
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="example@domain.com"
+                        type='email'
+                        id='email'
+                        name='email'
+                        placeholder='example@domain.com'
                         value={email}
                         onChange={this.handleChange}
                     ></input>
                 </fieldset>
                 <fieldset>
-                    <label className="form__label" htmlFor="phone">Phone: </label>
+                    <label className='form__label' htmlFor='phone'>Phone: </label>
                     <input 
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        placeholder="555-555-555"
+                        type='tel'
+                        id='phone'
+                        name='phone'
+                        placeholder='555-555-555'
                         value={phone}
                         onChange={this.handleChange}
                     ></input>
                 </fieldset>
-                <FormButtons isList={false} />
+                <FormButtons isList={false} handleClick={this.props.handleClick}/>
             </form>
         );
     }

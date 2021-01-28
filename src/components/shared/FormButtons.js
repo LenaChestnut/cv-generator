@@ -12,12 +12,31 @@ class FormButtons extends React.Component {
 
     render() {
         return (
-            <fieldset className="form__buttons button-container">
-                <button type="submit"><CheckSquare className="button__icon"/></button>
+            <fieldset className='form__buttons button-container' >
+                <button type='submit' aria-label='submit' title='Submit'>
+                    <CheckSquare
+                        className='button__icon'
+                        aria-hidden='true' 
+                        focusable='false'
+                    />
+                </button>
                 {this.state.isList 
-                ? <button type="button"><MinusSquare className="button__icon"/></button>
+                ?
+                <button type='button' aria-label='delete' title='Delete'>
+                    <MinusSquare 
+                        className='button__icon'
+                        aria-hidden='true' 
+                        focusable='false'
+                    />
+                </button>
                 : null}
-                <button type="button"><XSquare className="button__icon"/></button>
+                <button type='button' aria-label='cancel' title='Cancel' onClick={this.props.handleClick}>
+                    <XSquare
+                        className='button__icon'
+                        aria-hidden='true' 
+                        focusable='false'
+                    />
+                </button>
             </fieldset>
         );
     }

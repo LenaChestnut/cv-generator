@@ -110,6 +110,11 @@ h2 + fieldset {
 	margin-top: 0;
 }
 
+.info-item__main,
+.info-item__extra {
+	border-bottom: 1px solid transparent;
+}
+
 .info-item {
 	margin-top: 1rem;
 	border-bottom: 1px dotted var(--accent-color);
@@ -135,15 +140,15 @@ h2 + fieldset {
 	font-weight: 700;
 }
 
-.name,
-.form__name-input {
-	font-size: 2rem;
-}
-
 .info-item__main,
 .form__degree-input,
 .form__job-input {
 	font-size: 1.1rem;
+}
+
+.name,
+.form__name-input {
+	font-size: 2rem;
 }
 
 /* FORMS */

@@ -12,17 +12,23 @@ class GeneralForm extends React.Component {
         }
 
         this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange(e) {
         this.setState({[e.target.name]: e.target.value});
     }
 
+    handleSubmit(e) {
+        e.preventDefault();
+        this.props.saveInfo(this.state);
+    }
+
     render() {
         const { email, phone, fullName } = this.state;
 
         return (
-            <form className='form' name='general-form'>
+            <form className='form' name='general-form' onSubmit={this.handleSubmit}>
                 <input
                     type='text'
                     className='form__name-input'

@@ -8,20 +8,33 @@ class App extends React.Component {
 		super();
 		
 		this.state = {
-		person: {
-			general: {
-			fullName: '',
-			email: '',
-			phone: ''
-			},
-			education: {
-			schools: []
-			},
-			experience: {
-			workplaces: []
+			person: {
+				general: {
+					fullName: '',
+					email: '',
+					phone: ''
+				},
+				education: {
+					schools: []
+				},
+				experience: {
+					workplaces: []
+				}
 			}
 		}
-		}
+
+		this.saveInfo = this.saveInfo.bind(this);
+	}
+
+	saveInfo(info, section) {
+		this.setState((prevState) => {
+			return {
+				person: {
+					...prevState.person,
+					[section]: info,
+				}
+			}
+		});
 	}
 	
 	render() {
@@ -29,7 +42,7 @@ class App extends React.Component {
 
 		return (
 			<main className="app">
-				<General general={general}/>
+				<General general={general} saveInfo={this.saveInfo}/>
 				<Education education={education}/>
 				<Experience experience={experience}/>
 			</main>

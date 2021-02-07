@@ -21,7 +21,7 @@ class GeneralForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.saveInfo(this.state);
+        this.props.handleFormSubmit(this.state);
     }
 
     render() {

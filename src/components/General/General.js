@@ -14,12 +14,6 @@ class General extends React.Component {
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
     }
 
-    // componentDidUpdate(prevProps) {
-    //     if (this.props !== prevProps) {
-
-    //     }
-    // }
-
     handleClick() {
         this.setState(state => ({
             isFormOpen: !state.isFormOpen,
@@ -33,7 +27,6 @@ class General extends React.Component {
         this.props.saveInfo(info, 'general');
     }
 
-    
     render() {
         const { isFormOpen } = this.state;
         const { fullName, email, phone } = this.props.general;
@@ -41,7 +34,11 @@ class General extends React.Component {
         return (
             <section className='section'>
                 {isFormOpen
-                ? <GeneralForm handleClick={this.handleClick} handleFormSubmit={this.handleFormSubmit}/>
+                ? <GeneralForm 
+                    handleClick={this.handleClick} 
+                    handleFormSubmit={this.handleFormSubmit} 
+                    info={this.props.general}
+                />
                 :                
                 <div className='section__info'>
                     <h1 className='info-item__main name'>{fullName !== '' ? fullName : 'Your Name'}</h1>

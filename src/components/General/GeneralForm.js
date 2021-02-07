@@ -6,9 +6,9 @@ class GeneralForm extends React.Component {
         super(props);
 
         this.state = {
-            email: '',
-            phone: '',
-            fullName: ''
+            fullName: props.info.fullName,
+            email: props.info.email,
+            phone: props.info.phone,
         }
 
         this.handleChange = this.handleChange.bind(this);

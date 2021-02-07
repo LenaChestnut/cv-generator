@@ -2,8 +2,6 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event'
 import General from './General';
 
-const mockSaveInfo = jest.fn();
-
 const testEmptyInfo = {
     fullName: '',
     email: '',

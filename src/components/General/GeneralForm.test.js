@@ -17,7 +17,7 @@ test('Form input values change on type', () => {
 
 describe.only('Form submitted', () => {
     beforeEach(() => {
-        render(<GeneralForm saveInfo={mockHandleSubmit} />);
+        render(<GeneralForm handleFormSubmit={mockHandleSubmit} />);
     });
 
     describe('With valid inputs', () => {

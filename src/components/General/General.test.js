@@ -66,7 +66,7 @@ describe('Edit button is clicked', () => {
     })
 });
 
-test.only('Form is displayed with passed values', () => {
+test('Form is displayed with passed values', () => {
     render(<General general={testCustomInfo}/>);
     userEvent.click(screen.getByRole('button', {name: /edit/i}));
     expect(screen.getByLabelText(/fullName/i)).toHaveValue(testCustomInfo.fullName);

@@ -36,3 +36,6 @@ Add 'aria-label' attribute to the button for accesibility and 'title' for toolti
 // Name should correspond to the aria-label of the button
 expect(screen.getByRole('button', { name: /name/i })).toBeInTheDocument();
 ```
+
+'aria-hidden' attribute on SVG - so it's not recognized by assistive technologies
+'focusable' attribute on SVG - so you can't focus on icon as opposed to the button as a whole

@@ -26,7 +26,7 @@ class School extends React.Component {
             <div className="info-item">
                 {
                     this.state.isFormOpen
-                    ? <EducationForm school={this.props.school} />
+                    ? <EducationForm school={this.props.school} handleClick={this.handleClick}/>
                     :
                     <div>
                         <h3 className="info-item__main degree">{degree ? degree : 'Degree Title'}</h3>

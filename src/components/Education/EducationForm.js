@@ -24,7 +24,7 @@ class EducationForm extends React.Component {
                     onChange={this.handleChange}
                 ></input>
                 <DateInput startDate={startDate} endDate={endDate} />
-                <FormButtons isList={true}/>
+                <FormButtons isList={true} handleClick={this.props.handleClick}/>
             </form>
         );
     }

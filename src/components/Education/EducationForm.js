@@ -3,8 +3,19 @@ import DateInput from '../shared/DateInput';
 import FormButtons from './../shared/FormButtons';
 
 class EducationForm extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            degree: props.school.degree,
+            schoolName: props.school.schoolName,
+            startDate: props.school.startDate,
+            endDate: props.school.endDate
+        }
+    }
+
     render() {
-        const { schoolName, degree, startDate, endDate } = this.props.school;
+        const { schoolName, degree, startDate, endDate } = this.state;
 
         return (
             <form className='form' name='school-form'>

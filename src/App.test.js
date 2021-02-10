@@ -15,7 +15,7 @@ describe('A new item is added after Add is clicked', () => {
     render(<App />);
   });
 
-  test.only('New school item is added', () => {
+  test('New school item is added', () => {
     userEvent.click(screen.getAllByRole('button', {name: /add/i})[0]);
     expect(screen.getByText(/degree title/i)).toBeInTheDocument();
     expect(screen.getByText(/school name/i)).toBeInTheDocument();

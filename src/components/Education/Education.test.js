@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { getByRole, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import Education from './Education';
 
@@ -25,7 +25,9 @@ const testCustomInfo = {
     ],
 }
 
-describe.only('Component is rendered correctly', () => {
+const mockSaveInfo = jest.fn();
+
+describe('Component is rendered correctly', () => {
     test('Default view is rendered', () => {
         render(<Education education={testEmptyInfo}/>);
         expect(screen.getByText(/education/i)).toBeInTheDocument();
@@ -44,8 +46,6 @@ describe.only('Component is rendered correctly', () => {
         })
     });
 })
-
-test.todo('A form is added after Add is clicked');
 
 test.todo('A form is displayed on Edit click');
 

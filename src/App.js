@@ -43,7 +43,7 @@ class App extends React.Component {
 		return (
 			<main className="app">
 				<General general={general} saveInfo={this.saveInfo}/>
-				<Education education={education}/>
+				<Education education={education} saveInfo={this.saveInfo}/>
 				<Experience experience={experience}/>
 			</main>
 		);

@@ -5,7 +5,7 @@ class AddButton extends React.Component {
     render() {
         return (
             <div className='button-container'>
-                <button type='button' aria-label='Add' title='Add'>
+                <button type='button' aria-label='Add' title='Add' onClick={this.props.addSchool}>
                     <PlusSquare
                         className='button__icon'
                         aria-hidden='true'

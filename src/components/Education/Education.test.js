@@ -4,7 +4,7 @@ import Education from './Education';
 
 const testEmptyInfo = {
     schools: [],
-}
+};
 
 const testCustomInfo = {
     schools: [
@@ -23,9 +23,7 @@ const testCustomInfo = {
             endDate: 'present'
         }
     ],
-}
-
-const mockSaveInfo = jest.fn();
+};
 
 describe('Component is rendered correctly', () => {
     test('Default view is rendered', () => {
@@ -45,8 +43,6 @@ describe('Component is rendered correctly', () => {
             }
         })
     });
-})
-
-test.todo('A form is displayed on Edit click');
+});
 
 test.todo('Info section is rendered with default info');

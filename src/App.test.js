@@ -25,3 +25,18 @@ describe('A new item is added after Add is clicked', () => {
 
   test.todo('New workplace is added');
 })
+
+describe('An item is removed from list on Delete', () => {
+  beforeEach(() => {
+    render(<App />);
+  });
+
+  test('School item is removed on Delete click', () => {
+    userEvent.click(screen.getAllByRole('button', {name: /add/i})[0]);
+    userEvent.click(screen.getAllByRole('button', {name: /edit/i})[1]);
+    userEvent.click(screen.getByRole('button', {name: /delete/i}));
+    expect(screen.queryByTestId('school-item')).not.toBeInTheDocument();
+  });
+
+  test.todo('Workplace item is removed on Delete click');
+});

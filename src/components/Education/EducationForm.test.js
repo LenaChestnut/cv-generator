@@ -34,11 +34,6 @@ describe('Form is rendered correctly', () => {
 
 test.todo('Inputs accept changes');
 
-describe('Form is removed on Delete click', () => {
-    test.todo('When form is empty');
-    test.todo('When info already existed');
-});
-
 describe('Form submitted', () => {
     test.todo('With valid inputs');
     test.todo('With invalid inputs');

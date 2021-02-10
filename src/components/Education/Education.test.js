@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import Education from './Education';
 
 const testEmptyInfo = {
@@ -43,5 +44,3 @@ describe('Component is rendered correctly', () => {
         })
     });
 });
-
-test.todo('Info section is rendered with default info');

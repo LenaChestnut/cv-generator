@@ -13,7 +13,7 @@ class FormButtons extends React.Component {
     render() {
         return (
             <fieldset className='form__buttons button-container' >
-                <button type='submit' aria-label='submit' title='Submit'>
+                <button type='submit' aria-label='submit' title='Submit' onClick={this.props.handleClick} className='submit'>
                     <CheckSquare
                         className='button__icon'
                         aria-hidden='true' 
@@ -22,7 +22,7 @@ class FormButtons extends React.Component {
                 </button>
                 {this.state.isList 
                 ?
-                <button type='button' aria-label='delete' title='Delete'>
+                <button type='button' aria-label='delete' title='Delete' onClick={this.props.handleClick} className='delete'>
                     <MinusSquare 
                         className='button__icon'
                         aria-hidden='true' 
@@ -30,7 +30,7 @@ class FormButtons extends React.Component {
                     />
                 </button>
                 : null}
-                <button type='button' aria-label='cancel' title='Cancel' onClick={this.props.handleClick}>
+                <button type='button' aria-label='cancel' title='Cancel' onClick={this.props.handleClick} className='cancel'>
                     <XSquare
                         className='button__icon'
                         aria-hidden='true' 

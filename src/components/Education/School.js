@@ -13,10 +13,16 @@ class School extends React.Component {
         this.handleClick = this.handleClick.bind(this);
     }
 
-    handleClick() {
-        this.setState(state => ({
-            isFormOpen: !state.isFormOpen,
-        }));
+    handleClick(e) {
+        const buttonName = e.target.className;
+
+        if (buttonName === 'edit' || buttonName === 'cancel') {
+            this.setState(state => ({
+                isFormOpen: !state.isFormOpen,
+            }));
+        } else if (buttonName === 'delete') {
+            this.props.deleteSchool(this.props.school.id);
+        }
     }
 
     render() {

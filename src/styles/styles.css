@@ -54,6 +54,10 @@ input {
 	box-sizing: border-box;
 }
 
+svg {
+	pointer-events: none;
+}
+
 @media screen and (min-width: 500px) {
 	input {
 		max-width: 50%;

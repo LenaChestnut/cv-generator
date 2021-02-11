@@ -9,6 +9,7 @@ class Education extends React.Component {
         
         this.handleChange = this.handleChange.bind(this);
         this.addSchool = this.addSchool.bind(this);
+        this.deleteSchool = this.deleteSchool.bind(this);
     }
 
     handleChange(e) {
@@ -25,6 +26,14 @@ class Education extends React.Component {
         this.props.saveInfo(updatedInfo, 'education');
     }
 
+    deleteSchool(id) {
+        const filteredSchools = this.props.education.schools.filter(school => school.id !== id);
+        const updatedInfo = {
+            schools: [...filteredSchools],
+        }
+        this.props.saveInfo(updatedInfo, 'education');
+    }
+
     render() {
         const { schools } = this.props.education;
 
@@ -33,7 +42,7 @@ class Education extends React.Component {
                 <h2 className="section__title">Education</h2>
                 <div className="section__info">
                     {schools.map(school => {
-                        return <School school={school} key={school.id}/>;
+                        return <School school={school} key={school.id} deleteSchool={this.deleteSchool}/>;
                     })}
                 </div>
                 <AddButton addSchool={this.addSchool}/>

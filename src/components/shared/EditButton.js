@@ -5,7 +5,7 @@ class EditButton extends React.Component {
     render() {
         return (
             <div className='button-container'>
-                <button type='button' onClick={this.props.handleClick} aria-label='Edit' title='Edit'>
+                <button type='button' onClick={this.props.handleClick} aria-label='edit' title='Edit' className='edit'>
                     <Edit
                         className='button__icon' 
                         style={{marginRight: '-1px'}} 

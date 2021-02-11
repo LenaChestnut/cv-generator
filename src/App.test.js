@@ -56,8 +56,7 @@ describe('Submitted info is displayed', () => {
     userEvent.click(screen.getByRole('button', {name: /submit/i}));
     expect(screen.getByText('Computer Science')).toBeInTheDocument();
     expect(screen.getByText('A Cool One')).toBeInTheDocument();
-    expect(screen.getByText('September 2012')).toBeInTheDocument();
-    expect(screen.getByText('June 2016')).toBeInTheDocument();
+    expect(screen.getByText('September 2012 - June 2016')).toBeInTheDocument();
   });
 
   test.todo('Workplace info is submitted');

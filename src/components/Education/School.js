@@ -31,8 +31,9 @@ class School extends React.Component {
         }
     }
 
-    handleFormSubmit() {
+    handleFormSubmit(info) {
         this.toggleForm();
+        this.props.editSchool(info);
     }
 
     render() {

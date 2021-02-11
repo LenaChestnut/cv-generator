@@ -7,6 +7,7 @@ class EducationForm extends React.Component {
         super(props);
 
         this.state = {
+            id: props.school.id,
             degree: props.school.degree || '',
             schoolName: props.school.schoolName || '',
             startDate: props.school.startDate || '',

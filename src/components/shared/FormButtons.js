@@ -13,7 +13,7 @@ class FormButtons extends React.Component {
     render() {
         return (
             <fieldset className='form__buttons button-container' >
-                <button type='submit' aria-label='submit' title='Submit' onClick={this.props.handleClick} className='submit'>
+                <button type='submit' aria-label='submit' title='Submit' className='submit'>
                     <CheckSquare
                         className='button__icon'
                         aria-hidden='true' 

@@ -7,10 +7,10 @@ class EducationForm extends React.Component {
         super(props);
 
         this.state = {
-            degree: props.school.degree,
-            schoolName: props.school.schoolName,
-            startDate: props.school.startDate,
-            endDate: props.school.endDate
+            degree: props.school.degree || '',
+            schoolName: props.school.schoolName || '',
+            startDate: props.school.startDate || '',
+            endDate: props.school.endDate || ''
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -25,7 +25,7 @@ class EducationForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.handleFormSubmit();
+        this.props.handleFormSubmit(this.state);
     }
 
     render() {

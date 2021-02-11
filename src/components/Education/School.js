@@ -12,6 +12,7 @@ class School extends React.Component {
 
         this.handleClick = this.handleClick.bind(this);
         this.toggleForm = this.toggleForm.bind(this);
+        this.handleFormSubmit = this.handleFormSubmit.bind(this);
     }
 
     toggleForm() {
@@ -30,7 +31,6 @@ class School extends React.Component {
         }
     }
 
-    
     handleFormSubmit() {
         this.toggleForm();
     }

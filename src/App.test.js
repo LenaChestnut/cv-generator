@@ -40,3 +40,25 @@ describe('An item is removed from list on Delete', () => {
 
   test.todo('Workplace item is removed on Delete click');
 });
+
+describe('Submitted info is displayed', () => {
+  beforeEach(() => {
+    render(<App />);
+  })
+
+  test('School info submitted', () => {
+    userEvent.click(screen.getAllByRole('button', {name: /add/i})[0]);
+    userEvent.click(screen.getAllByRole('button', {name: /edit/i})[1]);
+    userEvent.type(screen.getByLabelText(/degree/i), 'Computer Science');
+    userEvent.type(screen.getByLabelText(/schoolName/i), 'A Cool One');
+    userEvent.type(screen.getByLabelText(/startDate/i), 'September 2012');
+    userEvent.type(screen.getByLabelText(/endDate/i), 'June 2016');
+    userEvent.click(screen.getByRole('button', {name: /submit/i}));
+    expect(screen.getByText('Computer Science')).toBeInTheDocument();
+    expect(screen.getByText('A Cool One')).toBeInTheDocument();
+    expect(screen.getByText('September 2012')).toBeInTheDocument();
+    expect(screen.getByText('June 2016')).toBeInTheDocument();
+  });
+
+  test.todo('Workplace info is submitted');
+})

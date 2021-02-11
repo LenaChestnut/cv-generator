@@ -11,18 +11,28 @@ class School extends React.Component {
         }
 
         this.handleClick = this.handleClick.bind(this);
+        this.toggleForm = this.toggleForm.bind(this);
+    }
+
+    toggleForm() {
+        this.setState(state => ({
+            isFormOpen: !state.isFormOpen,
+        }));
     }
 
     handleClick(e) {
         const buttonName = e.target.className;
 
         if (buttonName === 'edit' || buttonName === 'cancel') {
-            this.setState(state => ({
-                isFormOpen: !state.isFormOpen,
-            }));
+            this.toggleForm();
         } else if (buttonName === 'delete') {
             this.props.deleteSchool(this.props.school.id);
         }
+    }
+
+    
+    handleFormSubmit() {
+        this.toggleForm();
     }
 
     render() {
@@ -32,7 +42,11 @@ class School extends React.Component {
             <div className='info-item' data-testid='school-item'>
                 {
                     this.state.isFormOpen
-                    ? <EducationForm school={this.props.school} handleClick={this.handleClick}/>
+                    ? <EducationForm 
+                        school={this.props.school} 
+                        handleClick={this.handleClick} 
+                        handleFormSubmit={this.handleFormSubmit}
+                    />
                     :
                     <div>
                         <h3 className='info-item__main degree'>{degree ? degree : 'Degree Title'}</h3>

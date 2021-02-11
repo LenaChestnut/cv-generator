@@ -14,6 +14,8 @@ const mockSchoolInfo = {
     endDate: '2014'
 }
 
+const mockHandleSubmit = jest.fn();
+
 describe('Form is rendered correctly', () => {
     test('With no existing info', () => {
         render(<EducationForm school={mockEmptySchool}/>);
@@ -44,7 +46,12 @@ test('Inputs accept changes', () => {
     expect(screen.getByLabelText(/endDate/i)).toHaveValue('June 2016');
 });
 
-describe('Form submitted', () => {
-    test.todo('With valid inputs');
-    test.todo('With invalid inputs');
-})
+test('Form submit called on button click', () => {
+    render(<EducationForm school={mockEmptySchool} handleFormSubmit={mockHandleSubmit}/>);
+    userEvent.type(screen.getByLabelText(/degree/i), 'Computer Science');
+    userEvent.type(screen.getByLabelText(/schoolName/i), 'A Cool One');
+    userEvent.type(screen.getByLabelText(/startDate/i), 'September 2012');
+    userEvent.type(screen.getByLabelText(/endDate/i), 'June 2016');
+    userEvent.click(screen.getByLabelText(/submit/));
+    expect(mockHandleSubmit).toHaveBeenCalled();
+});

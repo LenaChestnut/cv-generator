@@ -14,6 +14,7 @@ class EducationForm extends React.Component {
         }
 
         this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange(e) {
@@ -22,11 +23,16 @@ class EducationForm extends React.Component {
         })
     }
 
+    handleSubmit(e) {
+        e.preventDefault();
+        this.props.handleFormSubmit();
+    }
+
     render() {
         const { schoolName, degree, startDate, endDate } = this.state;
 
         return (
-            <form className='form' name='school-form'>
+            <form className='form' name='school-form' onSubmit={this.handleSubmit}>
                 <input
                     type='text'
                     className='form__degree-input'

@@ -12,6 +12,14 @@ class EducationForm extends React.Component {
             startDate: props.school.startDate,
             endDate: props.school.endDate
         }
+
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange(e) {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
     }
 
     render() {
@@ -23,18 +31,20 @@ class EducationForm extends React.Component {
                     type='text'
                     className='form__degree-input'
                     name='degree'
+                    aria-label='degree'
                     placeholder='Degree Title'
                     value={degree}
                     onChange={this.handleChange}
                 ></input>
                 <input 
                     type='text'
-                    name='school'
+                    name='schoolName'
+                    aria-label='schoolName'
                     placeholder='School Name'
                     value={schoolName}
                     onChange={this.handleChange}
                 ></input>
-                <DateInput startDate={startDate} endDate={endDate} />
+                <DateInput startDate={startDate} endDate={endDate} handleChange={this.handleChange}/>
                 <FormButtons isList={true} handleClick={this.props.handleClick}/>
             </form>
         );

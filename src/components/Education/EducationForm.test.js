@@ -32,7 +32,17 @@ describe('Form is rendered correctly', () => {
     });
 });
 
-test.todo('Inputs accept changes');
+test('Inputs accept changes', () => {
+    render(<EducationForm school={mockEmptySchool}/>);
+    userEvent.type(screen.getByLabelText(/degree/i), 'Computer Science');
+    userEvent.type(screen.getByLabelText(/schoolName/i), 'A Cool One');
+    userEvent.type(screen.getByLabelText(/startDate/i), 'September 2012');
+    userEvent.type(screen.getByLabelText(/endDate/i), 'June 2016');
+    expect(screen.getByLabelText(/degree/i)).toHaveValue('Computer Science');
+    expect(screen.getByLabelText(/schoolName/i)).toHaveValue('A Cool One');
+    expect(screen.getByLabelText(/startDate/i)).toHaveValue('September 2012');
+    expect(screen.getByLabelText(/endDate/i)).toHaveValue('June 2016');
+});
 
 describe('Form submitted', () => {
     test.todo('With valid inputs');

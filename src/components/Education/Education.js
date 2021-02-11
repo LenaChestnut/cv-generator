@@ -7,13 +7,8 @@ class Education extends React.Component {
     constructor(props) {
         super(props);
         
-        this.handleChange = this.handleChange.bind(this);
         this.addSchool = this.addSchool.bind(this);
         this.deleteSchool = this.deleteSchool.bind(this);
-    }
-
-    handleChange(e) {
-        this.setState({[e.target.name]: e.target.value});
     }
 
     addSchool() {

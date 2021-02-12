@@ -46,7 +46,7 @@ class EducationForm extends React.Component {
                 <input 
                     type='text'
                     name='schoolName'
-                    aria-label='schoolName'
+                    aria-label='school name'
                     placeholder='School Name'
                     value={schoolName}
                     onChange={this.handleChange}

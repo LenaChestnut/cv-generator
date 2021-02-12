@@ -58,7 +58,7 @@ describe('Submitted info is displayed', () => {
     render(<App />);
   })
 
-  test('School info submitted', () => {
+  test('New school info is displayed', () => {
     userEvent.click(screen.getAllByRole('button', {name: /add/i})[0]);
     userEvent.click(screen.getAllByRole('button', {name: /edit/i})[1]);
     userEvent.type(screen.getByLabelText(/degree/i), 'Computer Science');
@@ -71,5 +71,5 @@ describe('Submitted info is displayed', () => {
     expect(screen.getByText('September 2012 - June 2016')).toBeInTheDocument();
   });
 
-  test.todo('Workplace info is submitted');
+  test.todo('New workplace info is displayed');
 })

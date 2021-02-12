@@ -14,6 +14,14 @@ class ExperienceForm extends React.Component {
             endDate: this.props.workplace.endDate || '',
             jobDescription: this.props.workplace.jobDescription || ''
         }
+
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange(e) {
+        this.setState({
+            [e.target.name]: e.target.value,
+        });
     }
 
     render() {
@@ -24,7 +32,7 @@ class ExperienceForm extends React.Component {
                 <input
                     type='text'
                     className='form__job-input'
-                    name='job'
+                    name='jobTitle'
                     aria-label='job title'
                     placeholder='Job title'
                     value={jobTitle}
@@ -32,13 +40,13 @@ class ExperienceForm extends React.Component {
                 ></input>
                 <input 
                     type='text'
-                    name='company'
+                    name='companyName'
                     aria-label='company name'
                     placeholder='Company name'
                     value={companyName}
                     onChange={this.handleChange}
                 ></input>
-                <DateInput startDate={startDate} endDate={endDate} />
+                <DateInput startDate={startDate} endDate={endDate} handleChange={this.handleChange}/>
                 <textarea
                     name='jobDescription'
                     aria-label='job description'

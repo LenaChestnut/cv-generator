@@ -27,7 +27,7 @@ class Workplace extends React.Component {
         if (buttonName === 'edit' || buttonName === 'cancel') {
             this.toggleForm();
         } else if (buttonName === 'delete') {
-            // this.props.deleteSchool(this.props.school.id);
+            this.props.deleteWorkplace(this.props.workplace.id);
         }
     }
 

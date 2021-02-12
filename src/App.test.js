@@ -53,14 +53,12 @@ describe('An item is removed from list on Delete', () => {
     expect(screen.queryByTestId('school-item')).not.toBeInTheDocument();
   });
 
-  test.todo('Workplace item is removed on Delete click');
-
-  // test('Workplace item is removed on Delete click', () => {
-  //   userEvent.click(screen.getAllByRole('button', {name: /add/i})[1]);
-  //   userEvent.click(screen.getAllByRole('button', {name: /edit/i})[1]);
-  //   userEvent.click(screen.getByRole('button', {name: /delete/i}));
-  //   expect(screen.queryByTestId('workplace-item')).not.toBeInTheDocument();
-  // });
+  test('Workplace item is removed on Delete click', () => {
+    userEvent.click(screen.getAllByRole('button', {name: /add/i})[1]);
+    userEvent.click(screen.getAllByRole('button', {name: /edit/i})[1]);
+    userEvent.click(screen.getByRole('button', {name: /delete/i}));
+    expect(screen.queryByTestId('workplace-item')).not.toBeInTheDocument();
+  });
 });
 
 describe('Submitted info is displayed', () => {

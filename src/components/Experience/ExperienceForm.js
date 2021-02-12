@@ -7,7 +7,7 @@ class ExperienceForm extends React.Component {
         super(props);
 
         this.state = {
-            id: this.props.workplace.id || '',
+            id: this.props.workplace.id,
             jobTitle: this.props.workplace.jobTitle || '',
             companyName: this.props.workplace.companyName || '',
             startDate: this.props.workplace.startDate || '',

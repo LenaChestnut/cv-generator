@@ -42,6 +42,7 @@ h2 {
 
 p {
 	margin: 0;
+	white-space: pre-wrap;
 }
 
 input {

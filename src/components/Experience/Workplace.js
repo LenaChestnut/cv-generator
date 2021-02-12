@@ -37,7 +37,9 @@ class Workplace extends React.Component {
             <div className='info-item' data-testid='workplace-item'>
                 {
                     this.state.isFormOpen
-                    ? <ExperienceForm />
+                    ? <ExperienceForm 
+                        handleClick={this.handleClick}
+                    />
                     : (
                         <div>
                             <h3 className='info-item__main job'>{jobTitle ? jobTitle : 'Job title'}</h3>

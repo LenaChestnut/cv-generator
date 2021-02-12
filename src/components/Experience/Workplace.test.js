@@ -33,5 +33,9 @@ describe('Workplace form', () => {
         expect(screen.getByRole('form')).toBeInTheDocument();
     });
 
-    test.todo('Closed on Cancel click');
+    test('Closed on Cancel click', () => {
+        userEvent.click(screen.getByRole('button', {name: /edit/i}));
+        userEvent.click(screen.getByRole('button', {name: /cancel/i}));
+        expect(screen.queryByRole('form')).not.toBeInTheDocument();
+    });
 });

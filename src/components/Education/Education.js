@@ -63,7 +63,7 @@ class Education extends React.Component {
                         );
                     })}
                 </div>
-                <AddButton addSchool={this.addSchool}/>
+                <AddButton addItem={this.addSchool}/>
             </section>
         )
     }

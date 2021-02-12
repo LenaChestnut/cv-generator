@@ -44,7 +44,7 @@ class App extends React.Component {
 			<main className="app">
 				<General general={general} saveInfo={this.saveInfo}/>
 				<Education education={education} saveInfo={this.saveInfo}/>
-				<Experience experience={experience}/>
+				<Experience experience={experience} saveInfo={this.saveInfo}/>
 			</main>
 		);
 	}

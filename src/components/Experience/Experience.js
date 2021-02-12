@@ -1,8 +1,25 @@
 import React from 'react';
 import Workplace from './Workplace';
 import AddButton from './../shared/AddButton';
+import { v4 as uuidv4 } from 'uuid';
 
 class Experience extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.addWorkplace = this.addWorkplace.bind(this);
+    }
+
+    addWorkplace() {
+        const updatedInfo = {
+            workplaces: [
+                ...this.props.experience.workplaces,
+                {id: uuidv4()}
+            ]
+        }
+        this.props.saveInfo(updatedInfo, 'experience');
+    }
+
     render() {
         const { workplaces } = this.props.experience;
 
@@ -14,7 +31,7 @@ class Experience extends React.Component {
                         return <Workplace workplace={workplace} key={workplace.id}/>;
                     })}
                 </div>
-                <AddButton />
+                <AddButton addItem={this.addWorkplace}/>
             </section>
         )
     }

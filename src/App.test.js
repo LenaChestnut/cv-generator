@@ -35,7 +35,10 @@ describe('A new item is added after Add is clicked', () => {
     expect(screen.getAllByRole('button', {name: /edit/i}).length).toBe(2);
   });
 
-  test.todo('New workplace is added');
+  test('New workplace is added', () => {
+    userEvent.click(screen.getAllByRole('button', {name: /add/i})[1]);
+    expect(screen.getByTestId('workplace-item')).toBeInTheDocument();
+  });
 })
 
 describe('An item is removed from list on Delete', () => {

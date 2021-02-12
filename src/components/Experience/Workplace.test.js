@@ -24,6 +24,10 @@ describe('Workplace item is rendered correctly', () => {
 })
 
 describe('Workplace form', () => {
+    beforeEach(() => {
+        render(<Workplace workplace={{id: '123'}}/>);
+    });
+
     test.todo('Displayed on Edit click');
     test.todo('Closed on Cancel click');
 });

@@ -39,6 +39,7 @@ class Workplace extends React.Component {
                     this.state.isFormOpen
                     ? <ExperienceForm 
                         handleClick={this.handleClick}
+                        workplace={this.props.workplace}
                     />
                     : (
                         <div>

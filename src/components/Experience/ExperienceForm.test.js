@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import ExperienceForm from './ExperienceForm';
+import { mockExperience } from './mockExperienceData';
 
 describe('Form rendered correctly', () => {
     test('With no info', () => {
@@ -12,7 +13,14 @@ describe('Form rendered correctly', () => {
         expect(screen.getByLabelText(/job description/i)).toBeInTheDocument();
     });
 
-    test.todo('With custom indo');
+    test('With custom indo', () => {
+        render(<ExperienceForm workplace={mockExperience.workplaces[0]}/>);
+        expect(screen.getByLabelText(/job title/i)).toHaveValue('Auror');
+        expect(screen.getByLabelText(/company name/i)).toHaveValue('Ministry of Magic');
+        expect(screen.getByLabelText(/start date/i)).toHaveValue('2009');
+        expect(screen.getByLabelText(/end date/i)).toHaveValue('2015');
+        expect(screen.getByLabelText(/job description/i)).toHaveValue('Fighting the forces of dark magic');
+    });
 });
 
 test.todo('Form inputs accept changes');

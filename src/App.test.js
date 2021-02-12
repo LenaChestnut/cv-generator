@@ -10,6 +10,18 @@ describe("App container", () => {
   });
 });
 
+test('General info is passed to App on form submit', () => {
+  render(<App />);
+  userEvent.click(screen.getByRole('button', {name: /edit/i}));
+  userEvent.type(screen.getByLabelText(/fullName/i), 'John Doe');
+  userEvent.type(screen.getByLabelText(/email/i), 'email@test.com');
+  userEvent.type(screen.getByLabelText(/phone/i), '123-456');
+  userEvent.click(screen.getByRole('button', {name: /submit/i}));
+  expect(screen.getByText('John Doe')).toBeInTheDocument();
+  expect(screen.getByText('email@test.com')).toBeInTheDocument();
+  expect(screen.getByText('123-456')).toBeInTheDocument();
+})
+
 describe('A new item is added after Add is clicked', () => {
   beforeEach(() => {
     render(<App />);

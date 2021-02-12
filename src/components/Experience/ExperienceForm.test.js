@@ -3,6 +3,8 @@ import userEvent from '@testing-library/user-event';
 import ExperienceForm from './ExperienceForm';
 import { mockExperience } from './mockExperienceData';
 
+const mockHandleSubmit = jest.fn();
+
 describe('Form rendered correctly', () => {
     test('With no info', () => {
         render(<ExperienceForm workplace={{id: '123'}}/>);
@@ -37,4 +39,8 @@ test('Form inputs accept changes', () => {
     expect(screen.getByLabelText(/job description/i)).toHaveValue('Fighting the forces of dark magic');
 });
 
-test.todo('onSubmit called');
+test('onSubmit called', () => {
+    render(<ExperienceForm workplace={{id: '123'}} handleFormSubmit={mockHandleSubmit}/>);
+    userEvent.click(screen.getByLabelText(/submit/));
+    expect(mockHandleSubmit).toHaveBeenCalled();
+});

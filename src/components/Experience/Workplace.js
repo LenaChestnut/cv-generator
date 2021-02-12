@@ -12,6 +12,7 @@ class Workplace extends React.Component {
 
         this.toggleForm = this.toggleForm.bind(this);
         this.handleClick = this.handleClick.bind(this);
+        this.handleFormSubmit = this.handleFormSubmit.bind(this);
     }
 
     toggleForm() {
@@ -30,6 +31,11 @@ class Workplace extends React.Component {
         }
     }
 
+    handleFormSubmit(info) {
+        this.toggleForm();
+        this.props.editWorkplace(info);
+    }
+
     render () {
         const { jobTitle, companyName, startDate, endDate, jobDescription } = this.props.workplace;
 
@@ -40,6 +46,7 @@ class Workplace extends React.Component {
                     ? <ExperienceForm 
                         handleClick={this.handleClick}
                         workplace={this.props.workplace}
+                        handleFormSubmit={this.handleFormSubmit}
                     />
                     : (
                         <div>

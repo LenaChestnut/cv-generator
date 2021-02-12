@@ -16,6 +16,7 @@ class ExperienceForm extends React.Component {
         }
 
         this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange(e) {
@@ -24,11 +25,16 @@ class ExperienceForm extends React.Component {
         });
     }
 
+    handleSubmit(e) {
+        e.preventDefault();
+        this.props.handleFormSubmit(this.state);
+    }
+
     render() {
         const { jobTitle, companyName, startDate, endDate, jobDescription } = this.state;
         
         return (
-            <form className='form' name='experience-form'>
+            <form className='form' name='experience-form' onSubmit={this.handleSubmit}>
                 <input
                     type='text'
                     className='form__job-input'

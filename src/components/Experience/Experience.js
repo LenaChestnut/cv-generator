@@ -8,6 +8,7 @@ class Experience extends React.Component {
         super(props);
 
         this.addWorkplace = this.addWorkplace.bind(this);
+        this.editWorkplace = this.editWorkplace.bind(this);
     }
 
     addWorkplace() {
@@ -20,6 +21,21 @@ class Experience extends React.Component {
         this.props.saveInfo(updatedInfo, 'experience');
     }
 
+    editWorkplace(info) {
+        const newWorkplaces = this.props.experience.workplaces.map(workplace => {
+            if (workplace.id === info.id) {
+                return info;
+            }
+            return workplace;
+        });
+        
+        const updatedInfo = {
+            workplaces: [...newWorkplaces]
+        };
+
+        this.props.saveInfo(updatedInfo, 'experience');
+    }
+
     render() {
         const { workplaces } = this.props.experience;
 
@@ -28,7 +44,7 @@ class Experience extends React.Component {
                 <h2 className="section__title">Experience</h2>
                 <div className="section__info">
                     {workplaces.map(workplace => {
-                        return <Workplace workplace={workplace} key={workplace.id}/>;
+                        return <Workplace workplace={workplace} key={workplace.id} editWorkplace={this.editWorkplace}/>;
                     })}
                 </div>
                 <AddButton addItem={this.addWorkplace}/>

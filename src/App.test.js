@@ -53,12 +53,14 @@ describe('An item is removed from list on Delete', () => {
     expect(screen.queryByTestId('school-item')).not.toBeInTheDocument();
   });
 
-  test('Workplace item is removed on Delete click', () => {
-    userEvent.click(screen.getAllByRole('button', {name: /add/i})[1]);
-    userEvent.click(screen.getAllByRole('button', {name: /edit/i})[1]);
-    userEvent.click(screen.getByRole('button', {name: /delete/i}));
-    expect(screen.queryByTestId('workplace-item')).not.toBeInTheDocument();
-  });
+  test.todo('Workplace item is removed on Delete click');
+
+  // test('Workplace item is removed on Delete click', () => {
+  //   userEvent.click(screen.getAllByRole('button', {name: /add/i})[1]);
+  //   userEvent.click(screen.getAllByRole('button', {name: /edit/i})[1]);
+  //   userEvent.click(screen.getByRole('button', {name: /delete/i}));
+  //   expect(screen.queryByTestId('workplace-item')).not.toBeInTheDocument();
+  // });
 });
 
 describe('Submitted info is displayed', () => {
@@ -70,14 +72,27 @@ describe('Submitted info is displayed', () => {
     userEvent.click(screen.getAllByRole('button', {name: /add/i})[0]);
     userEvent.click(screen.getAllByRole('button', {name: /edit/i})[1]);
     userEvent.type(screen.getByLabelText(/degree/i), 'Computer Science');
-    userEvent.type(screen.getByLabelText(/schoolName/i), 'A Cool One');
-    userEvent.type(screen.getByLabelText(/startDate/i), 'September 2012');
-    userEvent.type(screen.getByLabelText(/endDate/i), 'June 2016');
+    userEvent.type(screen.getByLabelText(/school name/i), 'A Cool One');
+    userEvent.type(screen.getByLabelText(/start date/i), 'September 2012');
+    userEvent.type(screen.getByLabelText(/end date/i), 'June 2016');
     userEvent.click(screen.getByRole('button', {name: /submit/i}));
     expect(screen.getByText('Computer Science')).toBeInTheDocument();
     expect(screen.getByText('A Cool One')).toBeInTheDocument();
     expect(screen.getByText('September 2012 - June 2016')).toBeInTheDocument();
   });
 
-  test.todo('New workplace info is displayed');
+  test('New workplace info is displayed', () => {
+    userEvent.click(screen.getAllByRole('button', {name: /add/i})[1]);
+    userEvent.click(screen.getAllByRole('button', {name: /edit/i})[1]);
+    userEvent.type(screen.getByLabelText(/job title/i), 'Auror');
+    userEvent.type(screen.getByLabelText(/company name/i), 'Ministry of Magic');
+    userEvent.type(screen.getByLabelText(/start date/i), '2009');
+    userEvent.type(screen.getByLabelText(/end date/i), '2015');
+    userEvent.type(screen.getByLabelText(/job description/i), 'Fighting the forces of dark magic');
+    userEvent.click(screen.getByRole('button', {name: /submit/i}));
+    expect(screen.getByText('Auror')).toBeInTheDocument();
+    expect(screen.getByText('Ministry of Magic')).toBeInTheDocument();
+    expect(screen.getByText('2009 - 2015')).toBeInTheDocument();
+    expect(screen.getByText('Fighting the forces of dark magic')).toBeInTheDocument();
+  });
 })

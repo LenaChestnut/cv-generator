@@ -54,6 +54,16 @@ input {
 	box-sizing: border-box;
 }
 
+textarea {
+	font-family: var(--paragraph-font);
+	font-size: 16px;
+	color: var(--text-color);
+	margin: 0.5rem 0 0;
+	border: 1px dotted var(--accent-color);
+	border-radius: 5px;
+	padding: 0.3rem 0.5rem;
+}
+
 svg {
 	pointer-events: none;
 }

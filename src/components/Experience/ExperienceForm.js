@@ -1,5 +1,5 @@
-import React from "react";
-import DateInput from "../shared/DateInput";
+import React from 'react';
+import DateInput from '../shared/DateInput';
 import FormButtons from './../shared/FormButtons';
 
 class ExperienceForm extends React.Component {
@@ -18,19 +18,19 @@ class ExperienceForm extends React.Component {
         const { job, companyName, startDate, endDate } = this.state;
         
         return (
-            <form className="form">
+            <form className='form' name='experience-form'>
                 <input
-                    type="text"
-                    className="form__job-input"
-                    name="job"
-                    placeholder="Job title"
+                    type='text'
+                    className='form__job-input'
+                    name='job'
+                    placeholder='Job title'
                     value={job}
                     onChange={this.handleChange}
                 ></input>
                 <input 
-                    type="text"
-                    name="company"
-                    placeholder="Company name"
+                    type='text'
+                    name='company'
+                    placeholder='Company name'
                     value={companyName}
                     onChange={this.handleChange}
                 ></input>

@@ -28,6 +28,10 @@ describe('Workplace form', () => {
         render(<Workplace workplace={{id: '123'}}/>);
     });
 
-    test.todo('Displayed on Edit click');
+    test('Displayed on Edit click', () => {
+        userEvent.click(screen.getByRole('button', {name: /edit/i}));
+        expect(screen.getByRole('form')).toBeInTheDocument();
+    });
+
     test.todo('Closed on Cancel click');
 });

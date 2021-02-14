@@ -1,6 +1,7 @@
 import React from 'react';
 import DateInput from '../shared/DateInput';
 import FormButtons from './../shared/FormButtons';
+import { handleChange, handleSubmit } from '../shared/helpers';
 
 class EducationForm extends React.Component {
     constructor(props) {
@@ -14,19 +15,8 @@ class EducationForm extends React.Component {
             endDate: props.school.endDate || ''
         }
 
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
-
-    handleChange(e) {
-        this.setState({
-            [e.target.name]: e.target.value
-        })
-    }
-
-    handleSubmit(e) {
-        e.preventDefault();
-        this.props.handleFormSubmit(this.state);
+        this.handleChange = handleChange.bind(this);
+        this.handleSubmit = handleSubmit.bind(this);
     }
 
     render() {

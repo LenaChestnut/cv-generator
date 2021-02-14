@@ -16,27 +16,13 @@ export function addItem(section, itemsPath) {
     this.props.saveInfo(updatedInfo, section);
 }
 
-export function deleteWorkplace(id) {
-    const filtered = this.props.experience.workplaces.filter(workplace => workplace.id !== id);
-    const updatedInfo = {
-        workplaces: [...filtered],
-    }
-    this.props.saveInfo(updatedInfo, 'experience');
-}
-
-export function editWorkplace(info) {
-    const newWorkplaces = this.props.experience.workplaces.map(workplace => {
-        if (workplace.id === info.id) {
-            return info;
-        }
-        return workplace;
-    });
-    
-    const updatedInfo = {
-        workplaces: [...newWorkplaces]
-    };
-
-    this.props.saveInfo(updatedInfo, 'experience');
-}
-
 // form handlers
+
+export function handleChange(e) {
+    this.setState({[e.target.name]: e.target.value});
+}
+
+export function handleSubmit(e) {
+    e.preventDefault();
+    this.props.handleFormSubmit(this.state);
+}

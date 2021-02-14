@@ -1,6 +1,7 @@
 import React from 'react';
 import EditButton from './../shared/EditButton';
 import ExperienceForm from './ExperienceForm';
+import { toggleForm } from '../shared/helpers';
 
 class Workplace extends React.Component {
     constructor(props) {
@@ -10,15 +11,9 @@ class Workplace extends React.Component {
             isFormOpen: false,
         };
 
-        this.toggleForm = this.toggleForm.bind(this);
+        this.toggleForm = toggleForm.bind(this);
         this.handleClick = this.handleClick.bind(this);
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
-    }
-
-    toggleForm() {
-        this.setState(state => ({
-            isFormOpen: !state.isFormOpen,
-        }));
     }
 
     handleClick(e) {

@@ -1,6 +1,7 @@
 import React from 'react';
 import EditButton from './../shared/EditButton';
 import EducationForm from './EducationForm';
+import { toggleForm } from '../shared/helpers';
 
 class School extends React.Component {
     constructor(props) {
@@ -8,17 +9,11 @@ class School extends React.Component {
 
         this.state = {
             isFormOpen: false,
-        }
+        };
 
+        this.toggleForm = toggleForm.bind(this);
         this.handleClick = this.handleClick.bind(this);
-        this.toggleForm = this.toggleForm.bind(this);
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
-    }
-
-    toggleForm() {
-        this.setState(state => ({
-            isFormOpen: !state.isFormOpen,
-        }));
     }
 
     handleClick(e) {

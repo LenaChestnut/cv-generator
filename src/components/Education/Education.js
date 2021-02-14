@@ -1,25 +1,15 @@
 import React from 'react';
 import School from './School';
 import AddButton from './../shared/AddButton';
-import { v4 as uuidv4 } from 'uuid';
+import { addItem } from '../shared/helpers';
 
 class Education extends React.Component {
     constructor(props) {
         super(props);
         
-        this.addSchool = this.addSchool.bind(this);
+        this.addItem = addItem.bind(this);
         this.deleteSchool = this.deleteSchool.bind(this);
         this.editSchool = this.editSchool.bind(this);
-    }
-
-    addSchool() {
-        const updatedInfo = {
-            schools: [
-                ...this.props.education.schools,
-                {id: uuidv4()}
-            ]
-        }
-        this.props.saveInfo(updatedInfo, 'education');
     }
 
     deleteSchool(id) {
@@ -63,7 +53,7 @@ class Education extends React.Component {
                         );
                     })}
                 </div>
-                <AddButton addItem={this.addSchool}/>
+                <AddButton addItem={() => this.addItem('education', 'schools')}/>
             </section>
         )
     }

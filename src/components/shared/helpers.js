@@ -6,14 +6,14 @@ export function toggleForm() {
     }));
 }
 
-export function addItem() {
+export function addItem(section, itemsPath) {
     const updatedInfo = {
-        workplaces: [
-            ...this.props.experience.workplaces,
+        [itemsPath]: [
+            ...this.props[section][itemsPath],
             {id: uuidv4()}
         ]
     }
-    this.props.saveInfo(updatedInfo, 'experience');
+    this.props.saveInfo(updatedInfo, section);
 }
 
 export function deleteWorkplace(id) {

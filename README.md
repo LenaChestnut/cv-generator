@@ -13,7 +13,10 @@ The application should include:
 
 ## Personal goals
 
-Getting comfortable with writing unit tests for React apps using Jest and react-testing library.
+Getting comfortable with:
+
+-   writing unit tests for React apps using Jest and react-testing library
+-   using class components
 
 Resources:
 

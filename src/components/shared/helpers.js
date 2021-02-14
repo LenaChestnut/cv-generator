@@ -39,6 +39,3 @@ export function handleSubmit(e) {
     e.preventDefault();
     this.props.handleFormSubmit(this.state);
 }
-
-//delete item
-//handle click - form buttons

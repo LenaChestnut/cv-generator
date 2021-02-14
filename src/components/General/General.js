@@ -1,6 +1,7 @@
 import React from 'react';
 import EditButton from './../shared/EditButton';
 import GeneralForm from './GeneralForm';
+import { toggleForm } from '../shared/helpers';
 
 class General extends React.Component {
     constructor(props) {
@@ -10,20 +11,12 @@ class General extends React.Component {
             isFormOpen: false,
         }
 
-        this.handleClick = this.handleClick.bind(this);
+        this.toggleForm = toggleForm.bind(this);
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
     }
 
-    handleClick() {
-        this.setState(state => ({
-            isFormOpen: !state.isFormOpen,
-        }));
-    }
-
     handleFormSubmit(info) {
-        this.setState(state => ({
-            isFormOpen: !state.isFormOpen
-        }));
+        this.toggleForm();
         this.props.saveInfo(info, 'general');
     }
 
@@ -35,7 +28,7 @@ class General extends React.Component {
             <section className='section'>
                 {isFormOpen
                 ? <GeneralForm 
-                    handleClick={this.handleClick} 
+                    handleClick={this.toggleForm} 
                     handleFormSubmit={this.handleFormSubmit} 
                     info={this.props.general}
                 />
@@ -51,7 +44,7 @@ class General extends React.Component {
                             <span className='label'>Phone:</span> {phone !== '' ? phone : 'XXX-XXX-XXX'}
                         </p>
                     </div>
-                    <EditButton handleClick={this.handleClick}/>
+                    <EditButton handleClick={this.toggleForm}/>
                 </div>
                 }
             </section>

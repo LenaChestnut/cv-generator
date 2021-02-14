@@ -23,9 +23,12 @@ export function editItem(info, section, itemsPath) {
         return item;
     });
     
-    return {
-        [itemsPath]: [...newInfo]
-    };
+    return { [itemsPath]: [...newInfo] };
+}
+
+export function deleteItem(id, section, itemsPath) {
+    const filtered = this.props[section][itemsPath].filter(school => school.id !== id);
+    return { [itemsPath]: [...filtered] };
 }
 
 export function handleChange(e) {
@@ -37,6 +40,5 @@ export function handleSubmit(e) {
     this.props.handleFormSubmit(this.state);
 }
 
-//edit item
 //delete item
 //handle click - form buttons

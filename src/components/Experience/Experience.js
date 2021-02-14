@@ -1,7 +1,7 @@
 import React from 'react';
 import Workplace from './Workplace';
 import AddButton from './../shared/AddButton';
-import { addItem, editItem } from '../shared/helpers';
+import { addItem, editItem, deleteItem } from '../shared/helpers';
 
 class Experience extends React.Component {
     constructor(props) {
@@ -18,10 +18,7 @@ class Experience extends React.Component {
     }
 
     deleteWorkplace(id) {
-        const filtered = this.props.experience.workplaces.filter(workplace => workplace.id !== id);
-        const updatedInfo = {
-            workplaces: [...filtered],
-        }
+        const updatedInfo = deleteItem.call(this, id, 'experience', 'workplaces');
         this.props.saveInfo(updatedInfo, 'experience');
     }
 

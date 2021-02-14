@@ -1,7 +1,7 @@
 import React from 'react';
 import School from './School';
 import AddButton from './../shared/AddButton';
-import { addItem, editItem } from '../shared/helpers';
+import { addItem, editItem, deleteItem } from '../shared/helpers';
 
 class Education extends React.Component {
     constructor(props) {
@@ -18,10 +18,7 @@ class Education extends React.Component {
     }
 
     deleteSchool(id) {
-        const filteredSchools = this.props.education.schools.filter(school => school.id !== id);
-        const updatedInfo = {
-            schools: [...filteredSchools],
-        }
+        const updatedInfo = deleteItem.call(this, id, 'education', 'schools')
         this.props.saveInfo(updatedInfo, 'education');
     }
     

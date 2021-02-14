@@ -16,8 +16,6 @@ export function addItem(section, itemsPath) {
     this.props.saveInfo(updatedInfo, section);
 }
 
-// form handlers
-
 export function handleChange(e) {
     this.setState({[e.target.name]: e.target.value});
 }

@@ -1,15 +1,20 @@
 import React from 'react';
 import Workplace from './Workplace';
 import AddButton from './../shared/AddButton';
-import { addItem } from '../shared/helpers';
+import { addItem, editItem } from '../shared/helpers';
 
 class Experience extends React.Component {
     constructor(props) {
         super(props);
 
-        this.addItem = addItem.bind(this);
+        this.addWorkplace = this.addWorkplace.bind(this);
         this.editWorkplace = this.editWorkplace.bind(this);
         this.deleteWorkplace = this.deleteWorkplace.bind(this);
+    }
+
+    addWorkplace() {
+        const info = addItem.call(this, 'experience', 'workplaces');
+        this.props.saveInfo(info, 'experience');
     }
 
     deleteWorkplace(id) {
@@ -21,17 +26,7 @@ class Experience extends React.Component {
     }
 
     editWorkplace(info) {
-        const newWorkplaces = this.props.experience.workplaces.map(workplace => {
-            if (workplace.id === info.id) {
-                return info;
-            }
-            return workplace;
-        });
-        
-        const updatedInfo = {
-            workplaces: [...newWorkplaces]
-        };
-
+        const updatedInfo = editItem.call(this, info, 'experience', 'workplaces');
         this.props.saveInfo(updatedInfo, 'experience');
     }
 
@@ -53,7 +48,7 @@ class Experience extends React.Component {
                         )
                     })}
                 </div>
-                <AddButton addItem={() => this.addItem('experience', 'workplaces')}/>
+                <AddButton addItem={this.addWorkplace}/>
             </section>
         )
     }

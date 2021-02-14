@@ -1,15 +1,20 @@
 import React from 'react';
 import School from './School';
 import AddButton from './../shared/AddButton';
-import { addItem } from '../shared/helpers';
+import { addItem, editItem } from '../shared/helpers';
 
 class Education extends React.Component {
     constructor(props) {
         super(props);
         
-        this.addItem = addItem.bind(this);
+        this.addSchool = this.addSchool.bind(this);
         this.deleteSchool = this.deleteSchool.bind(this);
         this.editSchool = this.editSchool.bind(this);
+    }
+
+    addSchool() {
+        const info = addItem.call(this, 'education', 'schools');
+        this.props.saveInfo(info, 'education');
     }
 
     deleteSchool(id) {
@@ -19,19 +24,9 @@ class Education extends React.Component {
         }
         this.props.saveInfo(updatedInfo, 'education');
     }
-
+    
     editSchool(info) {
-        const newSchools = this.props.education.schools.map(school => {
-            if (school.id === info.id) {
-                return info;
-            }
-            return school;
-        });
-        
-        const updatedInfo = {
-            schools: [...newSchools]
-        };
-
+        const updatedInfo = editItem.call(this, info, 'education', 'schools');
         this.props.saveInfo(updatedInfo, 'education');
     }
 
@@ -53,7 +48,7 @@ class Education extends React.Component {
                         );
                     })}
                 </div>
-                <AddButton addItem={() => this.addItem('education', 'schools')}/>
+                <AddButton addItem={this.addSchool}/>
             </section>
         )
     }

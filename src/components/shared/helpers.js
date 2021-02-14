@@ -7,13 +7,25 @@ export function toggleForm() {
 }
 
 export function addItem(section, itemsPath) {
-    const updatedInfo = {
+    return {
         [itemsPath]: [
             ...this.props[section][itemsPath],
             {id: uuidv4()}
         ]
-    }
-    this.props.saveInfo(updatedInfo, section);
+    };
+}
+
+export function editItem(info, section, itemsPath) {
+    const newInfo = this.props[section][itemsPath].map(item => {
+        if (item.id === info.id) {
+            return info;
+        }
+        return item;
+    });
+    
+    return {
+        [itemsPath]: [...newInfo]
+    };
 }
 
 export function handleChange(e) {
@@ -24,3 +36,7 @@ export function handleSubmit(e) {
     e.preventDefault();
     this.props.handleFormSubmit(this.state);
 }
+
+//edit item
+//delete item
+//handle click - form buttons
